@@ -16106,9 +16106,7 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sklearn</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span>
-    <span class="n">tuned_smpl_ppln</span><span class="p">,</span>
-    <span class="n">X_train</span><span class="p">,</span>
-    <span class="n">y_train</span><span class="p">,</span>
+    <span class="n">tuned_smpl_ppln</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
     <span class="n">cmap</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greys</span><span class="p">,</span>
     <span class="n">display_labels</span><span class="o">=</span><span class="n">ng20</span><span class="o">.</span><span class="n">target_names</span><span class="p">,</span>
     <span class="n">include_values</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -16163,17 +16161,18 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4>Exkurs: Erklärung der &raquo;falschen Atheisten&laquo;</h4>
+<h3>Exkurs: Erklärung der &raquo;falschen Atheisten&laquo;</h3>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">tuned_smpl_ppln</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="n">y_train_pred_proba</span> <span class="o">=</span> <span class="n">tuned_smpl_ppln</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Berechne Wahrscheinlichkeiten und vorhergesagte Klassen:</span>
+<span class="n">y_train_prob</span> <span class="o">=</span> <span class="n">tuned_smpl_ppln</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">tuned_smpl_ppln</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16184,10 +16183,11 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">false_atheists</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">y_train</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Finde alle Samples, die fälschlicherw. der Kategorie 0 (Atheismus) zugeordnet wurden:</span>
+<span class="n">false_atheists</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">y_train</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">false_atheist_idcs</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">false_atheists</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">false_atheist_idcs</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
@@ -16205,7 +16205,7 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 
 
 
@@ -16223,10 +16223,11 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">false_atheist_probas</span><span class="o">=</span><span class="n">y_train_pred_proba</span><span class="p">[</span><span class="n">false_atheist_idcs</span><span class="p">,:]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Betrachte Wahrscheinlichkeiten für diese Samples:</span>
+<span class="n">false_atheist_probas</span> <span class="o">=</span> <span class="n">y_train_prob</span><span class="p">[</span><span class="n">false_atheist_idcs</span><span class="p">,:]</span>
 <span class="n">false_atheist_probas</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -16243,7 +16244,7 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 
 
 
@@ -16264,16 +16265,16 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 
 </div>
 
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">max_prob_per_sample</span> <span class="o">=</span> <span class="n">false_atheist_probas</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Welche dieser Samples haben konstante Wahrschinlichkeit für alle Klassen?</span>
 <span class="n">min_prob_per_sample</span> <span class="o">=</span> <span class="n">false_atheist_probas</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sample_has_constant_prob</span> <span class="o">=</span> \
-    <span class="p">(</span><span class="n">min_prob_per_sample</span> <span class="o">==</span> <span class="n">max_prob_per_sample</span><span class="p">)</span>
+<span class="n">max_prob_per_sample</span> <span class="o">=</span> <span class="n">false_atheist_probas</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sample_has_constant_prob</span> <span class="o">=</span> <span class="p">(</span><span class="n">min_prob_per_sample</span> <span class="o">==</span> <span class="n">max_prob_per_sample</span><span class="p">)</span>
 <span class="n">numpy</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">sample_has_constant_prob</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -16290,7 +16291,7 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 
 
 
@@ -16305,7 +16306,7 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
@@ -16319,7 +16320,7 @@ Mean test score:  [0.962 0.962 0.962 0.962 0.962]
 </div>
 </div>
 
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
