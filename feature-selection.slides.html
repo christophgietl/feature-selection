@@ -17066,26 +17066,24 @@ require(
       waitSeconds: 15
     },
     [
-      "reveal.js/dist/reveal.js"
+      "reveal.js/dist/reveal.js",
+      "reveal.js/plugin/notes/notes.js"
     ],
-
-    function(Reveal){
+    function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
             controls: true,
             progress: true,
             history: true,
             transition: "slide",
+            plugins: [RevealNotes]
         });
-
         var update = function(event){
           if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
             MathJax.Hub.Rerender(Reveal.getCurrentSlide());
           }
         };
-
         Reveal.addEventListener('slidechanged', update);
-
         function setScrollingSlide() {
             var scroll = false
             if (scroll === true) {
@@ -17099,7 +17097,6 @@ require(
                 .css('margin-top', '20px');
             }
         }
-
         // check and set the scrolling slide every time the slide change
         Reveal.addEventListener('slidechanged', setScrollingSlide);
     }
