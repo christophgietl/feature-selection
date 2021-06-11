@@ -13,7 +13,7 @@ export_slides:	## Use NbConvert to export slides as Reveal.js slideshow
 		--reveal-prefix reveal.js \
 		--SlidesExporter.file_extension .html \
 		--SlidesExporter.reveal_theme white \
-		--template reveal-notes \
+		--template reveal-notes-and-slide-numbers \
 		--to slides \
 		feature-selection.ipynb
 
@@ -24,7 +24,7 @@ export_and_present_slides:	## Use NbConvert to export slides as Reveal.js slides
 		--reveal-prefix reveal.js \
 		--SlidesExporter.file_extension .html \
 		--SlidesExporter.reveal_theme white \
-		--template reveal-notes \
+		--template reveal-notes-and-slide-numbers \
 		--to slides \
 		feature-selection.ipynb
 
