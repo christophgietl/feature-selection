@@ -10,6 +10,7 @@ edit_slides:	## Start JupyterLab
 export_slides:	## Use NbConvert to export slides as Reveal.js slideshow
 	jupyter nbconvert \
 		--reveal-prefix reveal.js \
+		--SlidesExporter.reveal_theme white \
 		--template reveal-notes \
 		--to slides \
 		feature-selection.ipynb
@@ -18,6 +19,7 @@ export_and_present_slides:	## Use NbConvert to export slides as Reveal.js slides
 	jupyter nbconvert \
 		--post serve \
 		--reveal-prefix reveal.js \
+		--SlidesExporter.reveal_theme white \
 		--template reveal-notes \
 		--to slides \
 		feature-selection.ipynb
