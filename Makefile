@@ -5,10 +5,10 @@ edit_slides:	## Start JupyterLab
 	jupyter lab
 
 export_slides:	## Use NbConvert to export slides as Reveal.js slideshow
-	jupyter nbconvert feature-selection.ipynb --to slides
+	jupyter nbconvert feature-selection.ipynb --to slides --reveal-prefix reveal.js
 
 export_and_present_slides:	## Use NbConvert to export slides as Reveal.js slideshow and start the show
-	jupyter nbconvert feature-selection.ipynb --to slides --post serve
+	jupyter nbconvert feature-selection.ipynb --to slides --reveal-prefix reveal.js --post serve
 
 set_up_python_environment:	## Install Python dependencies needed to edit and run this presentation
 	pip3 install --requirement requirements.txt
