@@ -14478,12 +14478,13 @@ div.jp-OutputPrompt {
 </aside></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Datensatz-und-Ziel-der-Modellierung">Datensatz und Ziel der Modellierung<a class="anchor-link" href="#Datensatz-und-Ziel-der-Modellierung">&#182;</a></h1>
+<h2>Datensatz &raquo;20 Newsgroups&laquo; und<br/>Ziel der Modellierung</h2>
+
 </div>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Hintergrund-des-Datensatzes:-Usenet">Hintergrund des Datensatzes: Usenet<a class="anchor-link" href="#Hintergrund-des-Datensatzes:-Usenet">&#182;</a></h2><ul>
+<h3 id="Hintergrund-des-Datensatzes:-Usenet">Hintergrund des Datensatzes: Usenet<a class="anchor-link" href="#Hintergrund-des-Datensatzes:-Usenet">&#182;</a></h3><ul>
 <li>historischer Internet-Dienst (neben World-Wide-Web, E-Mail und anderen Diensten)</li>
 <li>unterteilt in zahlreiche Diskussionsforen (sogenannte Newsgroups)</li>
 <li>Nachrichtenformat ähnlich zu E-Mail<ul>
@@ -14498,9 +14499,9 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Datenquelle-und-Datenformat">Datenquelle und Datenformat<a class="anchor-link" href="#Datenquelle-und-Datenformat">&#182;</a></h2>
+<h3 id="Datenquelle-und-Datenformat">Datenquelle und Datenformat<a class="anchor-link" href="#Datenquelle-und-Datenformat">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
@@ -14520,35 +14521,11 @@ div.jp-OutputPrompt {
     <span class="c1"># um die Zuordnung von Nachrichten zu Personen zu erschweren:</span>
     <span class="n">remove</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span> <span class="s1">&#39;footers&#39;</span><span class="p">,</span> <span class="s1">&#39;quotes&#39;</span><span class="p">]</span>
 <span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(list, numpy.ndarray, list)</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14557,7 +14534,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14579,7 +14556,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(18846, 18846, 20)</pre>
+<pre>(list, numpy.ndarray, list)</pre>
 </div>
 
 </div>
@@ -14588,19 +14565,13 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Input-Daten">Input-Daten<a class="anchor-link" href="#Input-Daten">&#182;</a></h3>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">types</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="n">types</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14622,7 +14593,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{str}</pre>
+<pre>(18846, 18846, 20)</pre>
 </div>
 
 </div>
@@ -14631,14 +14602,19 @@ div.jp-OutputPrompt {
 
 </div>
 
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Input-Daten-(erkl&#228;rende-Variablen)">Input-Daten (erkl&#228;rende Variablen)<a class="anchor-link" href="#Input-Daten-(erkl&#228;rende-Variablen)">&#182;</a></h4>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
-<span class="nb">min</span><span class="p">(</span><span class="n">lengths</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">types</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">types</span>
 </pre></div>
 
      </div>
@@ -14660,7 +14636,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(0, 158791)</pre>
+<pre>{str}</pre>
 </div>
 
 </div>
@@ -14675,7 +14651,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">lengths</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14697,7 +14674,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(1169.7, 3858.6)</pre>
+<pre>(0, 158791)</pre>
 </div>
 
 </div>
@@ -14706,18 +14683,13 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Output-Daten-(Zielvariable)">Output-Daten (Zielvariable)<a class="anchor-link" href="#Output-Daten-(Zielvariable)">&#182;</a></h3>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14739,6 +14711,48 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(1169.7, 3858.6)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Output-Daten-(Zielvariable)">Output-Daten (Zielvariable)<a class="anchor-link" href="#Output-Daten-(Zielvariable)">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>(array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
         17, 18, 19]),
  array([799, 973, 985, 982, 963, 988, 975, 990, 996, 994, 999, 991, 984,
@@ -14754,7 +14768,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
@@ -14789,12 +14803,12 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Input--und-Output-Daten-einer-Beispielnachricht">Input- und Output-Daten einer Beispielnachricht<a class="anchor-link" href="#Input--und-Output-Daten-einer-Beispielnachricht">&#182;</a></h3>
+<h4 id="Beispielnachricht-aus-dem-Datensatz-(Input--und-Output-Daten)">Beispielnachricht aus dem Datensatz (Input- und Output-Daten)<a class="anchor-link" href="#Beispielnachricht-aus-dem-Datensatz-(Input--und-Output-Daten)">&#182;</a></h4>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ng20</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">4_328</span><span class="p">][:</span><span class="mi">434</span><span class="p">])</span>
@@ -14846,7 +14860,7 @@ Quite the opposite:
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">4_328</span><span class="p">],</span> <span class="n">ng20</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="n">ng20</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">4_328</span><span class="p">]]</span>
@@ -14865,7 +14879,7 @@ Quite the opposite:
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
 
@@ -14883,7 +14897,7 @@ Quite the opposite:
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Ziel-der-Modellierung:-Thematischer-Textklassifikator">Ziel der Modellierung: Thematischer Textklassifikator<a class="anchor-link" href="#Ziel-der-Modellierung:-Thematischer-Textklassifikator">&#182;</a></h2><ul>
+<h3 id="Ziel-der-Modellierung:-Thematischer-Textklassifikator">Ziel der Modellierung: Thematischer Textklassifikator<a class="anchor-link" href="#Ziel-der-Modellierung:-Thematischer-Textklassifikator">&#182;</a></h3><ul>
 <li>nimmt Texte entgegen</li>
 <li>ordnet sie jeweils einem der 20 Themen zu (entsprechend den 20 Newsgroups)</li>
 </ul>
