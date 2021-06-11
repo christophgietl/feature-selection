@@ -4,7 +4,10 @@ help:	## Display this help message
 edit_slides:	## Start JupyterLab
 	jupyter lab
 
-export_and_present_slides:	## Use NbConvert to export slides as Reveal.js slideshow
+export_slides:	## Use NbConvert to export slides as Reveal.js slideshow
+	jupyter nbconvert feature-selection.ipynb --to slides
+
+export_and_present_slides:	## Use NbConvert to export slides as Reveal.js slideshow and start the show
 	jupyter nbconvert feature-selection.ipynb --to slides --post serve
 
 set_up_python_environment:	## Install Python dependencies needed to edit and run this presentation
