@@ -9,7 +9,9 @@ edit_slides:	## Start JupyterLab
 
 export_slides:	## Use NbConvert to export slides as Reveal.js slideshow
 	jupyter nbconvert \
+		--output index \
 		--reveal-prefix reveal.js \
+		--SlidesExporter.file_extension .html \
 		--SlidesExporter.reveal_theme white \
 		--template reveal-notes \
 		--to slides \
@@ -18,7 +20,9 @@ export_slides:	## Use NbConvert to export slides as Reveal.js slideshow
 export_and_present_slides:	## Use NbConvert to export slides as Reveal.js slideshow and start the show
 	jupyter nbconvert \
 		--post serve \
+		--output index \
 		--reveal-prefix reveal.js \
+		--SlidesExporter.file_extension .html \
 		--SlidesExporter.reveal_theme white \
 		--template reveal-notes \
 		--to slides \
