@@ -14556,7 +14556,7 @@ div.jp-OutputPrompt {
     
     <span class="c1"># Entferne Kopfzeilen, Signaturen und Zitate,</span>
     <span class="c1"># um die Zuordnung von Nachrichten zu Personen zu erschweren:</span>
-    <span class="n">remove</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span> <span class="s1">&#39;footers&#39;</span><span class="p">,</span> <span class="s1">&#39;quotes&#39;</span><span class="p">]</span>
+    <span class="n">remove</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;headers&quot;</span><span class="p">,</span> <span class="s2">&quot;footers&quot;</span><span class="p">,</span> <span class="s2">&quot;quotes&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -15078,7 +15078,7 @@ Quite the opposite:
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Der TF-IDF-Vectorizer transformiert Listen von Strings (=Texten) in Matrizen:</span>
 <span class="n">xtrct</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">feature_extraction</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">TfidfVectorizer</span><span class="p">(</span>
-    <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span> <span class="c1"># Wörter wie &#39;the&#39; und &#39;is&#39; werden nicht berücksichtigt.</span>
+    <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span> <span class="c1"># Wörter wie &quot;the&quot; und &quot;is&quot; werden nicht berücksichtigt.</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -15155,7 +15155,7 @@ Quite the opposite:
 
 <span class="n">tuned_ppln</span> <span class="o">=</span> <span class="n">cross_validate_and_fit</span><span class="p">(</span>
     <span class="n">estimator</span><span class="o">=</span><span class="n">ppln</span><span class="p">,</span>
-    <span class="n">param_grid</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;clssf__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]}</span> <span class="c1"># Regularisier. d. NB-Klass.</span>
+    <span class="n">param_grid</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;clssf__alpha&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]}</span> <span class="c1"># Regularisier. d. NB-Klass.</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -16144,7 +16144,7 @@ Mean test score:  [0.955 0.955 0.955 0.956 0.956]
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x1071059d0&gt;</pre>
+<pre>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x12b948040&gt;</pre>
 </div>
 
 </div>
